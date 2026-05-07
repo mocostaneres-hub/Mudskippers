@@ -27,6 +27,27 @@ const sections: FaqSection[] = [
         ),
       },
       {
+        q: "What are the next steps after I apply?",
+        a: (
+          <>
+            <p>
+              After we receive your application, our{" "}
+              <strong className="text-ink">memberships team</strong> will reach
+              out to schedule an informal{" "}
+              <strong className="text-ink">orientation call</strong> (online).
+              On that call we walk you through how the camp works, share dues
+              and logistics, and you get to ask anything you want &mdash; and we
+              get to know each other a little.
+            </p>
+            <p>
+              After orientation you&rsquo;ll have everything you need to make
+              an <strong className="text-ink">informed decision</strong> about
+              joining us.
+            </p>
+          </>
+        ),
+      },
+      {
         q: "How much are camp dues?",
         a: (
           <>
@@ -545,14 +566,7 @@ export default function FaqPage() {
 
         <div className="mt-20 border-t border-rule pt-10">
           <p className="text-ink-soft">
-            Didn&rsquo;t find your answer?{" "}
-            <a
-              href="mailto:info@mudskippercafe.com"
-              className="text-terracotta border-b border-terracotta/40 hover:border-terracotta"
-            >
-              Email us
-            </a>
-            .
+            Email us at info@mudskippercafe.com
           </p>
         </div>
       </div>

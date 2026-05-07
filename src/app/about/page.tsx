@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { AboutPhotoCarousel } from "@/components/about-photo-carousel";
 
 export default function AboutPage() {
   return (
@@ -52,15 +52,7 @@ export default function AboutPage() {
           </aside>
         </div>
 
-        <div className="mt-20 relative w-full aspect-[16/9] overflow-hidden bg-cream">
-          <Image
-            src="/images/camp-group-real.png"
-            alt="Mudskippers Camp gathered on the playa at sunset"
-            fill
-            sizes="(min-width: 1280px) 1200px, 100vw"
-            className="object-cover [filter:brightness(1.12)_saturate(1.05)]"
-          />
-        </div>
+        <AboutPhotoCarousel />
 
         <div className="mt-12 flex flex-wrap items-center gap-8 border-t border-rule pt-10">
           <Link

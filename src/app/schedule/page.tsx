@@ -30,8 +30,8 @@ const schedule = [
     time: "3pm",
     blurb:
       "A devotional to the Queen of Pop &mdash; afternoon edition. Every era, every era-defining outfit, every banger. Express yourself.",
-    image: "/images/madonna-night.png",
-    alt: "A Madonna-themed dance party under a fabric canopy at golden hour",
+    image: "/images/madonna-apocalypse.png",
+    alt: "Camper in Madonna t-shirt and sunglasses at Mudskippers camp under the playa shade",
   },
   {
     n: "04",

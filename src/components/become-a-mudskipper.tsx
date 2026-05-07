@@ -109,7 +109,7 @@ const steps = [
   {
     n: "04",
     title: "Welcome",
-    desc: "We see you on the playa. Your name is on the welcome board. You are now a Mudskipper.",
+    desc: "You're officially in the camp. We add you to all the group chats right away so we can start building community long before we hit the playa.",
     Icon: FireIcon,
   },
 ];

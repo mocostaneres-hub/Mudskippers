@@ -32,8 +32,8 @@ export default function PopGymPage() {
         </h1>
 
         <p className="mt-10 text-xl sm:text-2xl text-ink-soft max-w-2xl leading-relaxed">
-          A pop-up gym in the dust. Sweat to the icons. Free for all camps.
-          Drop in any morning.
+          A pop-up gym in the dust. Sweat to the icons. Work out to the best
+          pop hits from the 80s thru the 2020s.
         </p>
 
         <div className="mt-16 relative w-full aspect-[3/2] overflow-hidden">
@@ -63,27 +63,22 @@ export default function PopGymPage() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 border-t border-rule pt-12">
-          <div className="md:col-span-4">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-rule pt-12 max-w-4xl">
+          <div>
             <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
               Hours
             </p>
-            <p className="mt-3 font-display text-2xl text-ink">7am — 11am</p>
-            <p className="text-ink-soft">Daily, the week of Burning Man</p>
+            <p className="mt-3 font-display text-2xl text-ink">
+              10am &mdash; 7pm
+            </p>
+            <p className="text-ink-soft">Monday &mdash; Friday</p>
           </div>
-          <div className="md:col-span-4">
+          <div>
             <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
               Location
             </p>
             <p className="mt-3 font-display text-2xl text-ink">Mudskippers Camp</p>
             <p className="text-ink-soft">Black Rock City &mdash; address TBA</p>
-          </div>
-          <div className="md:col-span-4">
-            <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
-              Cost
-            </p>
-            <p className="mt-3 font-display text-2xl text-ink">Free</p>
-            <p className="text-ink-soft">In the spirit of gifting</p>
           </div>
         </div>
 
