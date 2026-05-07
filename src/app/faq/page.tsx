@@ -522,10 +522,7 @@ export default function FaqPage() {
                     key={i}
                     className="group border-b border-rule open:bg-cream-soft/30 transition-colors"
                   >
-                    <summary className="cursor-pointer list-none py-6 sm:py-7 flex items-start gap-6 hover:text-ink">
-                      <span className="font-display text-terracotta text-sm tracking-widest pt-1.5 shrink-0">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                    <summary className="cursor-pointer list-none py-6 sm:py-7 flex items-start gap-4 hover:text-ink">
                       <span className="flex-1 font-display font-light text-ink text-xl sm:text-2xl leading-snug pr-4">
                         {item.q}
                       </span>
@@ -536,7 +533,7 @@ export default function FaqPage() {
                         +
                       </span>
                     </summary>
-                    <div className="pb-8 pl-0 sm:pl-12 pr-4 sm:pr-12 -mt-1 text-ink-soft text-[16px] leading-relaxed space-y-4 [&>p]:max-w-prose [&_strong]:font-medium">
+                    <div className="pb-8 pr-4 sm:pr-8 -mt-1 text-ink-soft text-[16px] leading-relaxed space-y-4 [&>p]:max-w-prose [&_strong]:font-medium">
                       {item.a}
                     </div>
                   </details>

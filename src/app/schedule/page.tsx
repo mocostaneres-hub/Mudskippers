@@ -39,9 +39,9 @@ const schedule = [
     when: "Saturday",
     time: "1pm",
     blurb:
-      "An afternoon tribute to the greatest voice of all time. Wear white. Wear sequins. Bring tissues. We will always love you.",
-    image: "/images/whitney-night.png",
-    alt: "A Whitney Houston tribute party with dancers in white at sunset",
+      "<p>We know you want it: 4+ hrs of the greatest voice that ever existed in this universe.</p><p>The Mudskippers close the week with this pre-burn BANGER and want you to come dance with somebody, feel the heat with somebody while sipping on our delicious ice-cold cocktails. Do we have a date?</p>",
+    image: "/images/whitney-tribute.png",
+    alt: "Mudskippers Whitney tribute party: singer with microphone, crowd celebrating under playa shade",
   },
 ];
 
@@ -56,8 +56,8 @@ export default function SchedulePage() {
           The 2026 schedule.
         </h1>
         <p className="mt-8 text-lg text-ink-soft max-w-2xl leading-relaxed">
-          One week. Pop hits all morning. Three afternoon parties. Find us in
-          Black Rock City.
+          One week. Pop hits every day. Three afternoon parties. The home of Pop
+          in the playa.
         </p>
 
         <div className="mt-16 sm:mt-20 border-t border-rule">
