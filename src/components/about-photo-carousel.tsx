@@ -89,13 +89,14 @@ export function AboutPhotoCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative aspect-[16/9] w-full overflow-hidden bg-cream">
+      <div className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden bg-cream">
         <Image
           key={current.src}
           src={current.src}
           alt={current.alt}
           fill
-          sizes="(min-width: 1280px) 1120px, 100vw"
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          quality={95}
           className="object-cover"
           priority={index === 0}
         />
@@ -119,7 +120,7 @@ export function AboutPhotoCarousel() {
             aria-label={`Photo ${i + 1} of ${SLIDES.length}`}
             onClick={() => go(i)}
             className={`
-              relative h-12 w-20 sm:h-14 sm:w-24 shrink-0 overflow-hidden rounded-sm transition-opacity
+              relative h-14 w-[5.5rem] sm:h-16 sm:w-28 shrink-0 overflow-hidden rounded-sm transition-opacity
               ${
                 i === index
                   ? "ring-2 ring-terracotta ring-offset-2 ring-offset-cream opacity-100"
@@ -131,8 +132,9 @@ export function AboutPhotoCarousel() {
               src={slide.src}
               alt=""
               fill
+              quality={90}
               className="object-cover"
-              sizes="96px"
+              sizes="240px"
             />
           </button>
         ))}

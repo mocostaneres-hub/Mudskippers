@@ -1,3 +1,7 @@
+import type { ReactNode } from "react";
+
+const APPLY_URL = "https://www.g8road.com/camps/mudskippers";
+
 type IconProps = { className?: string };
 
 const ClipboardIcon = ({ className }: IconProps) => (
@@ -87,23 +91,43 @@ const Arrow = ({ className }: IconProps) => (
   </svg>
 );
 
-const steps = [
+type Step = {
+  n: string;
+  title: string;
+  desc: ReactNode;
+  Icon: (props: IconProps) => React.JSX.Element;
+};
+
+const steps: Step[] = [
   {
     n: "01",
     title: "Sign up",
-    desc: "Apply via g8road.com. Tell us a bit about you and which icon you'd die for.",
+    desc: (
+      <>
+        <a
+          href={APPLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-terracotta border-b border-terracotta/40 hover:border-terracotta"
+        >
+          Apply here
+        </a>
+        . Tell us a bit about you: which pop icon is your favorite, your
+        favorite workout routine, and anything you&rsquo;d like.
+      </>
+    ),
     Icon: ClipboardIcon,
   },
   {
     n: "02",
     title: "Orientation",
-    desc: "Meet the camp leads on a video call. Ask anything. Hear what life on the playa is like.",
+    desc: "Meet the camp leads on a video call and ask anything. Hear more about what we're planning to bring and do together at Burning Man—including dues, what they cover, and more.",
     Icon: CompassIcon,
   },
   {
     n: "03",
     title: "Pay dues",
-    desc: "Camp dues cover food, infrastructure, art, and the parties. Payment plans available.",
+    desc: "Once you pay your dues, we'll send you an official receipt with key refund dates to keep in mind. We know things change, so we try to be flexible.",
     Icon: DuesIcon,
   },
   {
