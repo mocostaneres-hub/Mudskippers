@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CAMP_LOCATION, CAMP_LOCATION_FULL } from "@/lib/camp-location";
 
 const schedule = [
   {
@@ -57,7 +58,8 @@ export default function SchedulePage() {
         </h1>
         <p className="mt-8 text-lg text-ink-soft max-w-2xl leading-relaxed">
           One week. Pop hits every day. Three afternoon parties. The home of Pop
-          in the playa.
+          in the playa. Find us at{" "}
+          <strong className="text-ink font-normal">{CAMP_LOCATION}</strong>.
         </p>
 
         <div className="mt-16 sm:mt-20 border-t border-rule">
@@ -131,20 +133,11 @@ export default function SchedulePage() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center gap-8">
-          <Link
-            href="/join"
-            className="group inline-flex items-center gap-2 text-terracotta text-lg"
-          >
-            <span className="border-b border-terracotta/40 group-hover:border-terracotta transition-colors pb-0.5">
-              Find us on the playa
-            </span>
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </Link>
+          <p className="text-ink-soft">
+            <span className="text-ink font-display text-lg">{CAMP_LOCATION}</span>
+            {" · "}
+            {CAMP_LOCATION_FULL}
+          </p>
           <span className="text-ink-soft">
             All events are open to the BRC community. Be kind. Bring water.
           </span>

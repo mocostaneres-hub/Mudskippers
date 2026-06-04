@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CAMP_LOCATION, CAMP_LOCATION_FULL } from "@/lib/camp-location";
 
 type FaqItem = { q: string; a: ReactNode };
 type FaqSection = { n: string; title: string; intro?: string; items: FaqItem[] };
@@ -104,9 +105,8 @@ const sections: FaqSection[] = [
         a: (
           <>
             <p>
-              The camp will be 80&ndash;90 people, and we expect to be placed
-              again in the 7:30 sector. We requested a 200&times;200 space
-              (TBC by June).
+              The camp will be 80&ndash;90 people. For Burning Man 2026 we are
+              at <strong className="text-ink">{CAMP_LOCATION_FULL}</strong>.
             </p>
             <p>
               This year, we&rsquo;re bringing a compact, functional &ldquo;playa
@@ -131,6 +131,16 @@ const sections: FaqSection[] = [
               finalized.
             </p>
           </>
+        ),
+      },
+      {
+        q: "Where is Mudskippers Camp on the playa?",
+        a: (
+          <p>
+            Burning Man 2026: <strong className="text-ink">{CAMP_LOCATION_FULL}</strong>.
+            Look for the Mudskippers sign and towers at{" "}
+            <strong className="text-ink">{CAMP_LOCATION}</strong>.
+          </p>
         ),
       },
       {

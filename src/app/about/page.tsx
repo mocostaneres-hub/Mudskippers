@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AboutPhotoCarousel } from "@/components/about-photo-carousel";
+import { CAMP_LOCATION } from "@/lib/camp-location";
 
 export default function AboutPage() {
   return (
@@ -29,7 +30,8 @@ export default function AboutPage() {
               stay for{" "}
               <Link href="/schedule" className="text-terracotta border-b border-terracotta/40 hover:border-terracotta">Madonnapocalypse</Link>{" "}
               and the Whitney tribute. Or just chill with us in the lounge. We
-              look forward to welcoming you to our dusty home on the playa.
+              look forward to welcoming you to our dusty home at{" "}
+              {CAMP_LOCATION} on the playa.
             </p>
           </div>
 

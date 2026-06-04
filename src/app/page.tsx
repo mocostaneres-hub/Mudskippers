@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CAMP_LOCATION } from "@/lib/camp-location";
 
 export default function Home() {
   return (
@@ -59,7 +60,7 @@ export default function Home() {
                 Camp
               </p>
               <p className="mt-1 text-ink-soft">
-                Burning Man, Black Rock City, year after year.
+                Burning Man 2026 &mdash; {CAMP_LOCATION}.
               </p>
             </li>
             <li>

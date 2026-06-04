@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CAMP_LOCATION_FULL } from "@/lib/camp-location";
 
 const classes = [
   {
@@ -78,7 +79,7 @@ export default function PopGymPage() {
               Location
             </p>
             <p className="mt-3 font-display text-2xl text-ink">Mudskippers Camp</p>
-            <p className="text-ink-soft">Black Rock City &mdash; address TBA</p>
+            <p className="text-ink-soft">{CAMP_LOCATION_FULL}</p>
           </div>
         </div>
 
