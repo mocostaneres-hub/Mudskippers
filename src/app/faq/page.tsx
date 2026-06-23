@@ -1,9 +1,16 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { CAMP_LOCATION, CAMP_LOCATION_FULL } from "@/lib/camp-location";
+import { CAMP_LOCATION_FULL } from "@/lib/camp-location";
 
 type FaqItem = { q: string; a: ReactNode };
 type FaqSection = { n: string; title: string; intro?: string; items: FaqItem[] };
+
+const MUDSKIPPERS_GPT_URL =
+  "https://chatgpt.com/g/g-6a23175a979c8191a6b03db574e90e24-mudskippers-camp";
+const MUDSKIPPERS_GPT_QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=10&data=${encodeURIComponent(
+  MUDSKIPPERS_GPT_URL,
+)}`;
 
 const sections: FaqSection[] = [
   {
@@ -138,8 +145,6 @@ const sections: FaqSection[] = [
         a: (
           <p>
             Burning Man 2026: <strong className="text-ink">{CAMP_LOCATION_FULL}</strong>.
-            Look for the Mudskippers sign and towers at{" "}
-            <strong className="text-ink">{CAMP_LOCATION}</strong>.
           </p>
         ),
       },
@@ -534,6 +539,53 @@ export default function FaqPage() {
           Everything you need to know before you join us in the dust. Tap any
           question to expand the answer.
         </p>
+
+        <div className="mt-10 border-t border-b border-rule py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-6 sm:gap-10 items-center">
+          <div>
+            <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
+              Ask our GPT
+            </p>
+            <h2 className="mt-3 font-display font-light text-ink text-3xl sm:text-4xl leading-tight">
+              Mudskippers Camp GPT
+            </h2>
+            <p className="mt-4 text-ink-soft leading-relaxed max-w-xl">
+              Use our GPT for quick camp answers, orientation help, and 2026
+              logistics while you review the FAQ.
+            </p>
+            <a
+              href={MUDSKIPPERS_GPT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 group inline-flex items-center gap-2 text-terracotta text-lg"
+            >
+              <span className="border-b border-terracotta/40 group-hover:border-terracotta transition-colors pb-0.5">
+                Open Mudskippers Camp GPT
+              </span>
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </a>
+          </div>
+          <a
+            href={MUDSKIPPERS_GPT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Mudskippers Camp GPT"
+            className="justify-self-start sm:justify-self-end bg-white p-3 border border-rule"
+          >
+            <Image
+              src={MUDSKIPPERS_GPT_QR_URL}
+              alt="QR code for Mudskippers Camp GPT"
+              width={220}
+              height={220}
+              unoptimized
+              className="h-36 w-36 sm:h-44 sm:w-44"
+            />
+          </a>
+        </div>
 
         <div className="mt-16 sm:mt-20 space-y-16">
           {sections.map((section) => (

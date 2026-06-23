@@ -57,8 +57,9 @@ export default function SchedulePage() {
           The 2026 schedule.
         </h1>
         <p className="mt-8 text-lg text-ink-soft max-w-2xl leading-relaxed">
-          One week. Pop hits every day. Three afternoon parties. The home of Pop
-          in the playa. Find us at{" "}
+          The Pop Gym is open all week for workouts, movement, and music in the
+          dust. Our afternoon events are still on the calendar, but the gym is
+          the heartbeat of Mudskippers 2026. Find us at{" "}
           <strong className="text-ink font-normal">{CAMP_LOCATION}</strong>.
         </p>
 
@@ -139,7 +140,8 @@ export default function SchedulePage() {
             {CAMP_LOCATION_FULL}
           </p>
           <span className="text-ink-soft">
-            All events are open to the BRC community. Be kind. Bring water.
+            Gym hours and public events are open to the BRC community. Be kind.
+            Bring water.
           </span>
         </div>
       </div>

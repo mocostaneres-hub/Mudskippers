@@ -8,21 +8,37 @@ export default function Home() {
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl w-full py-12 sm:py-16">
           <h1 className="font-display font-light text-ink leading-[0.95] tracking-tight text-[clamp(2.75rem,9vw,8rem)]">
-            The home of
+            The playa&apos;s
             <br />
-            pop on the playa.
+            pop-up gym.
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-ink-soft max-w-xl">
-            Pop Gym · Madonnapocalypse · Whitney tribute · one week in the dust.
+            Lift, stretch, sweat, and recover at The Pop Gym &mdash; our 2026
+            camp centerpiece, with pop-fueled workouts and dusty community all
+            week long.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link
-              href="/schedule"
+              href="/pop-gym"
               className="group inline-flex items-center gap-2 text-terracotta text-lg sm:text-xl"
             >
               <span className="border-b border-terracotta/40 group-hover:border-terracotta transition-colors pb-0.5">
+                Explore The Pop Gym
+              </span>
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+            <Link
+              href="/schedule"
+              className="group inline-flex items-center gap-2 text-ink-soft hover:text-ink text-lg sm:text-xl"
+            >
+              <span className="border-b border-rule group-hover:border-ink transition-colors pb-0.5">
                 2026 schedule
               </span>
               <span
@@ -40,12 +56,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl w-full">
           <div className="relative w-full aspect-[16/9] overflow-hidden bg-cream">
             <Image
-              src="/images/camp-group-real.png"
-              alt="Mudskippers Camp gathered on the playa at sunset, in front of two scaffolding towers"
+              src="/images/pop-gym.png"
+              alt="The Pop Gym at sunrise on the playa, with kettlebells, mats, and a disco ball"
               fill
               priority
               sizes="(min-width: 1280px) 1200px, 100vw"
-              className="object-cover [filter:brightness(1.12)_saturate(1.05)]"
+              className="object-cover"
             />
           </div>
         </div>
@@ -57,28 +73,28 @@ export default function Home() {
             <li>
               <span className="font-display text-terracotta text-base">01</span>
               <p className="mt-2 font-display font-light text-ink text-xl sm:text-2xl">
-                Camp
+                The Pop Gym
               </p>
               <p className="mt-1 text-ink-soft">
-                Burning Man 2026 &mdash; {CAMP_LOCATION}.
+                Open Monday through Friday for workouts in the dust.
               </p>
             </li>
             <li>
               <span className="font-display text-terracotta text-base">02</span>
               <p className="mt-2 font-display font-light text-ink text-xl sm:text-2xl">
-                Community
+                Functional training
               </p>
               <p className="mt-1 text-ink-soft">
-                Global crew; memories that outlast the dust.
+                Squat rack, TRX, kettlebells, battle ropes, and more.
               </p>
             </li>
             <li>
               <span className="font-display text-terracotta text-base">03</span>
               <p className="mt-2 font-display font-light text-ink text-xl sm:text-2xl">
-                Family
+                Camp
               </p>
               <p className="mt-1 text-ink-soft">
-                We show up for each other on playa and off.
+                Burning Man 2026 &mdash; {CAMP_LOCATION}.
               </p>
             </li>
           </ul>

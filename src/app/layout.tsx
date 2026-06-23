@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mudskippers Camp — The home of pop on the playa.",
+  title: "Mudskippers Camp — The Pop Gym on the playa.",
   description:
-    "A Burning Man camp. Two legendary parties — Madonna Night and Whitney Night. One Pop Gym. The home of pop on the playa.",
+    "A Burning Man camp built around The Pop Gym: workouts, movement, music, community, and a few legendary afternoon events on the playa.",
 };
 
 export default function RootLayout({

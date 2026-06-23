@@ -10,8 +10,8 @@ export default function AboutPage() {
           About us
         </p>
         <h1 className="mt-4 font-display font-light text-ink leading-[1.0] tracking-tight text-[clamp(2.5rem,7vw,6rem)] max-w-5xl">
-          A tribe. A family.
-          <br />A worldwide network of friends.
+          A camp built around
+          <br />movement, music, and care.
         </h1>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
@@ -24,13 +24,15 @@ export default function AboutPage() {
               Europe, Australia &mdash; and everywhere in-between.
             </p>
             <p>
-              We work and play together to make the burn more fun and to give
-              bigger to those who come to our theme camp. Come for{" "}
+              We work and play together to make the burn more fun, more
+              connected, and a little healthier than anyone expects from a week
+              in the dust. Come for{" "}
               <Link href="/pop-gym" className="text-terracotta border-b border-terracotta/40 hover:border-terracotta">The Pop Gym</Link>,
-              stay for{" "}
+              stay for the community, then swing by{" "}
               <Link href="/schedule" className="text-terracotta border-b border-terracotta/40 hover:border-terracotta">Madonnapocalypse</Link>{" "}
-              and the Whitney tribute. Or just chill with us in the lounge. We
-              look forward to welcoming you to our dusty home at{" "}
+              and the Whitney tribute when it is time to dance. Or just chill
+              with us in the lounge. We look forward to welcoming you to our
+              dusty home at{" "}
               {CAMP_LOCATION} on the playa.
             </p>
           </div>
@@ -47,8 +49,8 @@ export default function AboutPage() {
                 The Mudskippers started way back in 1993, when our founding
                 fathers Nathan, Bart and Graham started{" "}
                 <em>Uncharted Territories</em> at Burning Man. Three decades
-                later we&rsquo;re still here, louder than ever &mdash; the home
-                of pop on the playa.
+                later we&rsquo;re still here, building The Pop Gym and keeping
+                the music loud on the playa.
               </p>
             </div>
           </aside>
