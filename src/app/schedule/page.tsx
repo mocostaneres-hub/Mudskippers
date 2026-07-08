@@ -1,6 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { CAMP_LOCATION, CAMP_LOCATION_FULL } from "@/lib/camp-location";
+import {
+  createBreadcrumbJsonLd,
+  createPageMetadata,
+  createWebPageJsonLd,
+} from "@/lib/seo";
+
+const description =
+  "Explore the Mudskippers Camp 2026 Burning Man schedule, including The Pop Gym, Naked Bar Crawl stop, Madonnapocalypse, and Whitney Houston Tribute Party.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Burning Man 2026 Schedule and Events",
+  description,
+  path: "/schedule",
+  image: {
+    url: "/images/whitney-tribute.png",
+    width: 1024,
+    height: 768,
+    alt: "Mudskippers Camp Whitney Houston Tribute Party on the playa",
+  },
+});
+
+const scheduleJsonLd = [
+  createWebPageJsonLd({
+    name: "Mudskippers Camp 2026 Schedule",
+    description,
+    path: "/schedule",
+    image: "/images/whitney-tribute.png",
+    keywords: [
+      "Mudskippers Camp schedule",
+      "Burning Man 2026 schedule",
+      "Burning Man events",
+      "Madonnapocalypse",
+      "Whitney Houston Tribute Party",
+      "BRC Naked Bar Crawl",
+      "The Pop Gym",
+    ],
+  }),
+  createBreadcrumbJsonLd([
+    { name: "Mudskippers Camp", path: "/" },
+    { name: "2026 Schedule", path: "/schedule" },
+  ]),
+];
 
 const schedule = [
   {
@@ -49,6 +93,7 @@ const schedule = [
 export default function SchedulePage() {
   return (
     <section className="px-6 sm:px-10 lg:px-16">
+      <JsonLd data={scheduleJsonLd} />
       <div className="mx-auto max-w-7xl w-full py-16 sm:py-24">
         <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
           Programme · 2026

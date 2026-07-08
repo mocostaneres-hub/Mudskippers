@@ -1,10 +1,53 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { AboutPhotoCarousel } from "@/components/about-photo-carousel";
 import { CAMP_LOCATION } from "@/lib/camp-location";
+import {
+  createBreadcrumbJsonLd,
+  createPageMetadata,
+  createWebPageJsonLd,
+} from "@/lib/seo";
+
+const description =
+  "Meet Mudskippers Camp, a radically inclusive Burning Man camp with roots since 1993, The Pop Gym, pop music events, and a worldwide community.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "About Mudskippers Camp",
+  description,
+  path: "/about",
+  image: {
+    url: "/images/camp-group-real.png",
+    width: 1024,
+    height: 631,
+    alt: "Mudskippers Camp community together on the playa",
+  },
+});
+
+const aboutJsonLd = [
+  createWebPageJsonLd({
+    name: "About Mudskippers Camp",
+    description,
+    path: "/about",
+    image: "/images/camp-group-real.png",
+    keywords: [
+      "Mudskippers Camp",
+      "Burning Man camp community",
+      "inclusive Burning Man camp",
+      "Burning Man camp since 1993",
+      "The Pop Gym",
+    ],
+  }),
+  createBreadcrumbJsonLd([
+    { name: "Mudskippers Camp", path: "/" },
+    { name: "About", path: "/about" },
+  ]),
+];
 
 export default function AboutPage() {
   return (
     <section className="px-6 sm:px-10 lg:px-16">
+      <JsonLd data={aboutJsonLd} />
       <div className="mx-auto max-w-7xl w-full py-16 sm:py-24">
         <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
           About us

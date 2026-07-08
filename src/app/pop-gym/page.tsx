@@ -1,6 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { CAMP_LOCATION_FULL } from "@/lib/camp-location";
+import {
+  createBreadcrumbJsonLd,
+  createPageMetadata,
+  createWebPageJsonLd,
+} from "@/lib/seo";
+
+const description =
+  "The Pop Gym is Mudskippers Camp's Burning Man gym in Black Rock City: functional training, kettlebells, TRX, battle ropes, mobility, and pop music on the playa.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "The Pop Gym | Burning Man Gym in Black Rock City",
+  description,
+  path: "/pop-gym",
+});
+
+const popGymJsonLd = [
+  createWebPageJsonLd({
+    name: "The Pop Gym at Mudskippers Camp",
+    description,
+    path: "/pop-gym",
+    keywords: [
+      "The Pop Gym",
+      "Burning Man gym",
+      "Black Rock City gym",
+      "playa workout",
+      "functional training Burning Man",
+      "kettlebells Burning Man",
+      "TRX Burning Man",
+    ],
+  }),
+  createBreadcrumbJsonLd([
+    { name: "Mudskippers Camp", path: "/" },
+    { name: "The Pop Gym", path: "/pop-gym" },
+  ]),
+];
 
 const classes = [
   {
@@ -24,6 +61,7 @@ const classes = [
 export default function PopGymPage() {
   return (
     <section className="px-6 sm:px-10 lg:px-16">
+      <JsonLd data={popGymJsonLd} />
       <div className="mx-auto max-w-7xl w-full py-16 sm:py-24">
         <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
           New for 2026
@@ -33,8 +71,9 @@ export default function PopGymPage() {
         </h1>
 
         <p className="mt-10 text-xl sm:text-2xl text-ink-soft max-w-2xl leading-relaxed">
-          A pop-up gym in the dust. Sweat to the icons. Work out to the best
-          pop hits from the 80s thru the 2020s.
+          A Burning Man gym in the dust, hosted by Mudskippers Camp in Black
+          Rock City. Sweat to the icons and work out to the best pop hits from
+          the 80s thru the 2020s.
         </p>
 
         <div className="mt-16 relative w-full aspect-[3/2] overflow-hidden">

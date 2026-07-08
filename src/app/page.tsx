@@ -1,10 +1,45 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { CAMP_LOCATION } from "@/lib/camp-location";
+import {
+  createBreadcrumbJsonLd,
+  createPageMetadata,
+  createWebPageJsonLd,
+} from "@/lib/seo";
+
+const description =
+  "Mudskippers Camp is a Burning Man 2026 camp at 6:45 & C in Black Rock City, home of The Pop Gym, playa workouts, pop music, and community events.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Burning Man Camp and Pop-Up Gym",
+  description,
+  path: "/",
+});
+
+const homeJsonLd = [
+  createWebPageJsonLd({
+    name: "Mudskippers Camp",
+    description,
+    path: "/",
+    keywords: [
+      "Mudskippers Camp",
+      "Burning Man camp",
+      "Burning Man 2026 camp",
+      "The Pop Gym",
+      "Burning Man gym",
+      "Black Rock City gym",
+      "playa workouts",
+    ],
+  }),
+  createBreadcrumbJsonLd([{ name: "Mudskippers Camp", path: "/" }]),
+];
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl w-full py-12 sm:py-16">
           <h1 className="font-display font-light text-ink leading-[0.95] tracking-tight text-[clamp(2.75rem,9vw,8rem)]">
@@ -14,9 +49,9 @@ export default function Home() {
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-ink-soft max-w-xl">
-            Lift, stretch, sweat, and recover at The Pop Gym &mdash; our 2026
-            camp centerpiece, with pop-fueled workouts and dusty community all
-            week long.
+            Lift, stretch, sweat, and recover at The Pop Gym &mdash; our
+            Burning Man 2026 camp centerpiece, with pop-fueled workouts and
+            dusty community all week long in Black Rock City.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">

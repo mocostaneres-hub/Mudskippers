@@ -1,10 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { JsonLd } from "@/components/json-ld";
 import { CAMP_LOCATION_FULL } from "@/lib/camp-location";
+import {
+  createBreadcrumbJsonLd,
+  createPageMetadata,
+  createWebPageJsonLd,
+} from "@/lib/seo";
 
 type FaqItem = { q: string; a: ReactNode };
 type FaqSection = { n: string; title: string; intro?: string; items: FaqItem[] };
+
+const description =
+  "Mudskippers Camp FAQ for Burning Man 2026: application, dues, location, The Pop Gym, showers, power, RVs, guests, and public camp events.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Burning Man Camp FAQ",
+  description,
+  path: "/faq",
+});
 
 const MUDSKIPPERS_GPT_URL =
   "https://chatgpt.com/g/g-6a23175a979c8191a6b03db574e90e24-mudskippers-camp";
@@ -527,9 +543,69 @@ const sections: FaqSection[] = [
   },
 ];
 
+const faqJsonLd = [
+  createWebPageJsonLd({
+    name: "Mudskippers Camp FAQ",
+    description,
+    path: "/faq",
+    keywords: [
+      "Mudskippers Camp FAQ",
+      "Burning Man camp FAQ",
+      "Burning Man camp dues",
+      "Burning Man 2026 camp location",
+      "The Pop Gym Burning Man",
+      "Burning Man camp showers",
+      "Burning Man camp power",
+    ],
+  }),
+  createBreadcrumbJsonLd([
+    { name: "Mudskippers Camp", path: "/" },
+    { name: "FAQ", path: "/faq" },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I apply to join the camp?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can apply through the Mudskippers Camp application on g8road.com. The application takes about one minute.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is Mudskippers Camp on the playa?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Burning Man 2026: ${CAMP_LOCATION_FULL}.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What will the camp be like in 2026?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Mudskippers Camp is planning for 80 to 90 people in 2026, with a compact playa gym focused on bodyweight and functional training, plus a small sports area at the front of camp.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What public events are scheduled by the camp for the week?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Mudskippers Camp public events include weekday yoga, The Pop Gym, a BRC Naked Bar Crawl stop, Madonnapocalypse, and the Whitney Houston Tribute Party.",
+        },
+      },
+    ],
+  },
+];
+
 export default function FaqPage() {
   return (
     <section className="px-6 sm:px-10 lg:px-16">
+      <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-4xl w-full py-16 sm:py-24">
         <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">FAQ</p>
         <h1 className="mt-4 font-display font-light text-ink leading-[1.0] tracking-tight text-[clamp(2.5rem,7vw,6rem)]">
