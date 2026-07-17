@@ -50,10 +50,11 @@ const schedule = [
   {
     n: "01",
     name: "The Pop Gym",
-    when: "Monday — Friday",
-    time: "Mornings",
+    when: null,
+    time: null,
+    status: "To be announced",
     blurb:
-      "A new concept of gym with everything you need to work out while listening to the best pop hits from the 80s through the 2020s. Drop in any morning, all week.",
+      "A new concept of gym with everything you need to work out while listening to the best pop hits from the 80s through the 2020s. Full schedule details will be announced soon.",
     cta: { href: "/pop-gym", label: "More about The Pop Gym" },
     image: "/images/pop-gym.jpg",
     alt: "The Pop Gym at sunrise on the playa, with kettlebells, mats, and a disco ball",
@@ -63,6 +64,7 @@ const schedule = [
     name: "Naked Bar Crawl Stop",
     when: "Wednesday",
     time: "Around 2:45pm",
+    status: null,
     blurb:
       "We&rsquo;re an official stop on the BRC Naked Bar Crawl. Drop in, get a drink, dance for a song, and let the parade carry on.",
     image: null,
@@ -73,6 +75,7 @@ const schedule = [
     name: "Madonnapocalypse",
     when: "Thursday",
     time: "3pm",
+    status: null,
     blurb:
       "A devotional to the Queen of Pop &mdash; afternoon edition. Every era, every era-defining outfit, every banger. Express yourself.",
     image: "/images/madonna-apocalypse.png",
@@ -83,6 +86,7 @@ const schedule = [
     name: "Whitney Houston Tribute Party",
     when: "Saturday",
     time: "1pm",
+    status: null,
     blurb:
       "<p>We know you want it: 4+ hrs of the greatest voice that ever existed in this universe.</p><p>The Mudskippers close the week with this pre-burn BANGER and want you to come dance with somebody, feel the heat with somebody while sipping on our delicious ice-cold cocktails. Do we have a date?</p>",
     image: "/images/whitney-tribute.png",
@@ -102,9 +106,10 @@ export default function SchedulePage() {
           The 2026 schedule.
         </h1>
         <p className="mt-8 text-lg text-ink-soft max-w-2xl leading-relaxed">
-          The Pop Gym is open all week for workouts, movement, and music in the
-          dust. Our afternoon events are still on the calendar, but the gym is
-          the heartbeat of Mudskippers 2026. Find us at{" "}
+          The Pop Gym returns with workouts, movement, and music in the dust.
+          Its 2026 schedule will be announced soon. Our afternoon events are
+          still on the calendar, and the gym remains the heartbeat of
+          Mudskippers 2026. Find us at{" "}
           <strong className="text-ink font-normal">{CAMP_LOCATION}</strong>.
         </p>
 
@@ -130,18 +135,29 @@ export default function SchedulePage() {
                   dangerouslySetInnerHTML={{ __html: e.blurb }}
                 />
                 <dl className="mt-8 space-y-2 text-[15px] text-ink-soft">
-                  <div className="flex gap-4">
-                    <dt className="w-16 uppercase tracking-wider text-xs pt-1">
-                      When
-                    </dt>
-                    <dd>{e.when}</dd>
-                  </div>
-                  <div className="flex gap-4">
-                    <dt className="w-16 uppercase tracking-wider text-xs pt-1">
-                      Time
-                    </dt>
-                    <dd>{e.time}</dd>
-                  </div>
+                  {e.status ? (
+                    <div className="flex gap-4">
+                      <dt className="w-20 uppercase tracking-wider text-xs pt-1">
+                        Schedule
+                      </dt>
+                      <dd>{e.status}</dd>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex gap-4">
+                        <dt className="w-16 uppercase tracking-wider text-xs pt-1">
+                          When
+                        </dt>
+                        <dd>{e.when}</dd>
+                      </div>
+                      <div className="flex gap-4">
+                        <dt className="w-16 uppercase tracking-wider text-xs pt-1">
+                          Time
+                        </dt>
+                        <dd>{e.time}</dd>
+                      </div>
+                    </>
+                  )}
                 </dl>
                 {e.cta && (
                   <Link
@@ -179,13 +195,9 @@ export default function SchedulePage() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center gap-8">
-          <p className="text-ink-soft">
-            <span className="text-ink font-display text-lg">{CAMP_LOCATION}</span>
-            {" · "}
-            {CAMP_LOCATION_FULL}
-          </p>
+          <p className="font-display text-lg text-ink">{CAMP_LOCATION_FULL}</p>
           <span className="text-ink-soft">
-            Gym hours and public events are open to the BRC community. Be kind.
+            The Pop Gym and public events welcome the BRC community. Be kind.
             Bring water.
           </span>
         </div>
