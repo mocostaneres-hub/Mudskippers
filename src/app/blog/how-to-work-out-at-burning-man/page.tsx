@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
-import { FIRST_BLOG_POST as post } from "@/lib/blog";
+import { getBlogPost } from "@/lib/blog";
 import {
   createArticleJsonLd,
   createArticleMetadata,
   createBreadcrumbJsonLd,
 } from "@/lib/seo";
+
+const post = getBlogPost("how-to-work-out-at-burning-man")!;
 
 export const metadata: Metadata = createArticleMetadata({
   title: post.title,
