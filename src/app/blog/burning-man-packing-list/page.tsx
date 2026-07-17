@@ -100,16 +100,43 @@ const categories = [
       ["Ticket and passes", "Double-check your Burning Man ticket, vehicle pass, and Early Arrival Pass, if applicable."],
     ],
   },
+  {
+    number: "08",
+    title: "Useful extras",
+    intro: "Helpful additions if you have the room.",
+    items: [
+      ["Tent tarp", "Place it under your tent to protect the floor from moisture, heat, and the playa surface."],
+      ["Ziploc bags", "Bring a few for organizing small items and containing dust."],
+      ["Battery-operated fan", "Makes hot tent mornings and afternoons much more manageable."],
+      ["Portable power banks", "Pack one or two for your phone, headlamp, and small electronics."],
+      ["Small solar setup", "Useful for reliable off-grid charging throughout the week."],
+      ["Cooler", "Keeps food and drinks cold. Ice is sold on playa; camp does not provide refrigerators."],
+    ],
+  },
 ];
 
-const smartExtras = [
-  "Put a tarp under your tent to protect the floor from moisture, heat, and the harsh playa surface.",
-  "Bring a few Ziploc bags, but not so many that you create a pile of dusty leftovers.",
-  "A battery-operated fan can make hot tent mornings much more manageable.",
-  "Pack one or two portable power banks for your phone, headlamp, and small electronics.",
-  "Bring a small solar setup if you need reliable off-grid charging throughout the week.",
-  "Use a cooler for food and drinks. Ice is sold on playa, but camp does not provide refrigerators.",
-];
+const amazonLinks: Record<string, string> = {
+  "Dust masks":
+    "https://www.amazon.com/dp/B0CG2G99MJ?tag=mobile09fe169-20",
+  "Dust goggles":
+    "https://www.amazon.com/dp/B0CHNN4S9G?tag=mobile09fe169-20",
+  "12-inch lag screw tent stakes":
+    "https://www.amazon.com/dp/B0DPN6VPZL",
+  "Rechargeable headlamp":
+    "https://www.amazon.com/dp/B0DK541NSS?tag=mobile09fe169-20",
+  "Tent lights":
+    "https://www.amazon.com/s?k=tent+lights+camping&tag=mobile09fe169-20",
+  "Combination bike lock":
+    "https://www.amazon.com/dp/B0F6D5RSGH?tag=mobile09fe169-20",
+  "Bike headlight and tail light":
+    "https://www.amazon.com/dp/B0CF8JRB6R?tag=mobile09fe169-20",
+  "Portable urinal":
+    "https://www.amazon.com/dp/B081S999SP?tag=mobile09fe169-20",
+  "Cup with a handle":
+    "https://www.amazon.com/dp/B0G7KD3TLK",
+  "Collapsible water jug": "https://amzn.to/4ftzhb4",
+  "Camping plate and utensils": "https://amzn.to/4ywigFO",
+};
 
 export default function BurningManPackingListPage() {
   return (
@@ -135,73 +162,89 @@ export default function BurningManPackingListPage() {
           </div>
         </header>
 
-        <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 sm:mt-20">
-          <aside className="md:col-span-3">
-            <div className="border-t border-rule pt-6 md:sticky md:top-8">
-              <p className="text-sm uppercase tracking-[0.18em] text-ink-soft">Before you drive in</p>
-              <p className="mt-4 font-display text-2xl font-light leading-snug text-ink">
-                Keep your mask, goggles, water, food, lights, ticket, and passes where you can reach them without unpacking the car.
-              </p>
+        <div className="mx-auto mt-14 max-w-6xl sm:mt-20">
+          <div className="flex flex-col gap-3 border-t border-rule pt-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.18em] text-terracotta">Packing checklist</p>
+              <h2 className="mt-2 font-display text-4xl font-light text-ink sm:text-5xl">Check it. Pack it. Go.</h2>
             </div>
-          </aside>
-
-          <div className="space-y-14 text-lg leading-relaxed text-ink-soft md:col-span-9">
-            <section>
-              <h2 className="font-display text-4xl font-light leading-tight text-ink sm:text-5xl">Pack for the environment.</h2>
-              <div className="mt-6 space-y-5">
-                <p>Burning Man packing is less about bringing everything and more about being ready for extremes. Dust, wind, blazing afternoons, cold nights, and sudden rain can all happen in the same week.</p>
-                <p>This list covers the personal essentials that have earned their place in Mo’s kit. Your camp may provide some shared infrastructure, but you are responsible for your own comfort, safety, hydration, and Leave No Trace supplies.</p>
-              </div>
-            </section>
-
-            {categories.map((category) => (
-              <section key={category.number}>
-                <p className="text-sm uppercase tracking-[0.18em] text-terracotta">{category.number}</p>
-                <h2 className="mt-2 font-display text-4xl font-light leading-tight text-ink sm:text-5xl">{category.title}.</h2>
-                <p className="mt-5">{category.intro}</p>
-                <ul className="mt-7 space-y-5">
-                  {category.items.map(([title, body]) => (
-                    <li key={title} className="grid grid-cols-[1.5rem_1fr] gap-3 border-t border-rule pt-5">
-                      <span aria-hidden className="text-terracotta">✓</span>
-                      <div><h3 className="font-display text-2xl font-light text-ink">{title}</h3><p className="mt-2">{body}</p></div>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-
-            <section>
-              <h2 className="font-display text-4xl font-light leading-tight text-ink sm:text-5xl">Smart extras worth the space.</h2>
-              <ul className="mt-7 grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
-                {smartExtras.map((item) => <li key={item} className="flex gap-3 border-t border-rule pt-4"><span aria-hidden className="text-terracotta">→</span><span>{item}</span></li>)}
-              </ul>
-            </section>
-
-            <aside className="border-y border-rule py-10">
-              <p className="text-sm uppercase tracking-[0.18em] text-terracotta">Two road rules</p>
-              <p className="mt-4 font-display text-3xl font-light leading-snug text-ink sm:text-4xl">Keep your real license plate fully visible, and follow every posted speed limit exactly after Reno.</p>
-              <p className="mt-5">Enforcement on the route to Black Rock City is strict. If bikes or gear block your plate, use a legal relocation bracket or approved auxiliary plate—never improvise a fake one.</p>
-            </aside>
-
-            <section>
-              <h2 className="font-display text-4xl font-light leading-tight text-ink sm:text-5xl">One final check.</h2>
-              <p className="mt-6">Before pulling away, confirm that your ticket, passes, ID, water, food, mask, goggles, and lights are in the vehicle and easy to reach. If weather delays entry, you may need to wait safely for hours.</p>
-              <p className="mt-5 font-display text-3xl font-light text-ink">Pack smart. Leave no trace. See you in the dust.</p>
-              <a
-                href="https://mos-burning-man-packing-list.mocostaneres.chatgpt.site"
-                target="_blank"
-                rel="noreferrer"
-                className="group mt-7 inline-flex items-center gap-2 text-lg text-terracotta"
-              >
-                <span className="border-b border-terracotta/40 pb-0.5 transition-colors group-hover:border-terracotta">
-                  Open Mo’s interactive packing checklist
-                </span>
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">↗</span>
-              </a>
-            </section>
-
-            <p className="text-sm leading-relaxed text-ink-soft">Product links and recommendations can change. Follow current Burning Man survival guidance, transportation rules, weather advisories, and the instructions provided by your camp.</p>
+            <p className="max-w-md text-sm leading-relaxed text-ink-soft">
+              Check each box as you pack. Amazon links are included where Mo recommends a specific item.
+            </p>
           </div>
+
+          <div className="mt-8 overflow-x-auto border border-rule">
+            <table className="w-full min-w-[46rem] border-collapse text-left">
+              <thead className="bg-cream-soft text-xs uppercase tracking-[0.16em] text-ink-soft">
+                <tr>
+                  <th scope="col" className="w-16 px-4 py-4 text-center font-normal">Pack</th>
+                  <th scope="col" className="w-[28%] px-4 py-4 font-normal">Item</th>
+                  <th scope="col" className="px-4 py-4 font-normal">What to know</th>
+                  <th scope="col" className="w-36 px-4 py-4 font-normal">Link</th>
+                </tr>
+              </thead>
+              {categories.map((category) => (
+                <tbody key={category.number} className="border-t border-rule">
+                  <tr className="bg-cream-soft/60">
+                    <th colSpan={4} scope="colgroup" className="px-4 py-4 text-left font-normal">
+                      <span className="mr-3 text-sm text-terracotta">{category.number}</span>
+                      <span className="font-display text-2xl text-ink">{category.title}</span>
+                      <span className="ml-3 text-sm text-ink-soft">{category.intro}</span>
+                    </th>
+                  </tr>
+                  {category.items.map(([title, body]) => {
+                    const amazonUrl = amazonLinks[title];
+
+                    return (
+                      <tr key={title} className="border-t border-rule align-top">
+                        <td className="px-4 py-5 text-center">
+                          <input
+                            type="checkbox"
+                            aria-label={`Mark ${title} as packed`}
+                            className="h-5 w-5 cursor-pointer accent-terracotta"
+                          />
+                        </td>
+                        <th scope="row" className="px-4 py-5 font-display text-xl font-light leading-snug text-ink">
+                          {title}
+                        </th>
+                        <td className="px-4 py-5 text-base leading-relaxed text-ink-soft">{body}</td>
+                        <td className="px-4 py-5">
+                          {amazonUrl ? (
+                            <a
+                              href={amazonUrl}
+                              target="_blank"
+                              rel="noreferrer sponsored"
+                              className="inline-flex items-center gap-1 border-b border-terracotta/40 pb-0.5 text-sm text-terracotta hover:border-terracotta"
+                            >
+                              Amazon <span aria-hidden>↗</span>
+                            </a>
+                          ) : (
+                            <span className="text-sm text-ink-soft">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              ))}
+            </table>
+          </div>
+
+          <p className="mt-4 text-xs leading-relaxed text-ink-soft">
+            As an Amazon Associate, we may earn from qualifying purchases.
+          </p>
+
+          <section className="mt-12 border-y border-rule py-8">
+            <h2 className="font-display text-3xl font-light text-ink">Before you leave</h2>
+            <ul className="mt-5 grid gap-4 text-base leading-relaxed text-ink-soft sm:grid-cols-2">
+              <li>Keep your ticket, passes, ID, water, food, mask, goggles, and lights easy to reach.</li>
+              <li>Keep your real license plate visible and follow every posted speed limit after Reno.</li>
+            </ul>
+          </section>
+
+          <p className="mt-8 text-sm leading-relaxed text-ink-soft">
+            Follow current Burning Man survival guidance, transportation rules, weather advisories, and your camp’s instructions.
+          </p>
         </div>
       </div>
     </article>

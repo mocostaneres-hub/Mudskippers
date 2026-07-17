@@ -24,8 +24,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedTime: "2026-07-17T12:00:00-07:00",
     displayDate: "July 17, 2026",
     readingTime: "8 min read",
-    image: "/images/camp-group-hero.png",
-    imageAlt: "Mudskippers Camp members gathered together at Burning Man",
+    image: "/images/burning-man-packing-list.png",
+    imageAlt:
+      "A simple packing checklist beside dust goggles, a bandana, and a carabiner",
   },
   {
     title: "How to Work Out at Burning Man Without Burning Out",
