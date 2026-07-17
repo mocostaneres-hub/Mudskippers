@@ -140,12 +140,14 @@ export default function PopGymPage() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-rule pt-12 max-w-4xl">
           <div>
             <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
-              Hours
+              Schedule
             </p>
             <p className="mt-3 font-display text-2xl text-ink">
-              10am &mdash; 7pm
+              To be announced
             </p>
-            <p className="text-ink-soft">Monday &mdash; Friday</p>
+            <p className="text-ink-soft">
+              Or drop in anytime for a workout!
+            </p>
           </div>
           <div>
             <p className="text-sm tracking-[0.2em] uppercase text-ink-soft">
