@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-const APPLY_URL = "https://www.g8road.com/camps/mudskippers";
+const APPLY_URL = "https://www.g8road.com/apply?camp=mudskippers";
 
 type IconProps = { className?: string };
 

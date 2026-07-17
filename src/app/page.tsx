@@ -91,8 +91,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl w-full">
           <div className="relative w-full aspect-[16/9] overflow-hidden bg-cream">
             <Image
-              src="/images/pop-gym.png"
-              alt="The Pop Gym at sunrise on the playa, with kettlebells, mats, and a disco ball"
+              src="/images/pop-gym.jpg"
+              alt="The fully equipped Pop Gym on the playa with free weights, workout benches, retro decor, and disco balls"
               fill
               priority
               sizes="(min-width: 1280px) 1200px, 100vw"

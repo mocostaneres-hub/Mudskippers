@@ -55,7 +55,7 @@ const schedule = [
     blurb:
       "A new concept of gym with everything you need to work out while listening to the best pop hits from the 80s through the 2020s. Drop in any morning, all week.",
     cta: { href: "/pop-gym", label: "More about The Pop Gym" },
-    image: "/images/pop-gym.png",
+    image: "/images/pop-gym.jpg",
     alt: "The Pop Gym at sunrise on the playa, with kettlebells, mats, and a disco ball",
   },
   {

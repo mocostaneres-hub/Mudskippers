@@ -15,9 +15,9 @@ type SeoImage = {
 };
 
 export const DEFAULT_OG_IMAGE = {
-  url: "/images/pop-gym.png",
-  width: 1536,
-  height: 1024,
+  url: "/images/pop-gym.jpg",
+  width: 1280,
+  height: 960,
   alt: "The Pop Gym at Mudskippers Camp on the Burning Man playa",
 } satisfies SeoImage;
 
@@ -31,6 +31,12 @@ type PageMetadata = {
   description: string;
   path: `/${string}`;
   image?: SeoImage;
+};
+
+type ArticleMetadata = PageMetadata & {
+  publishedTime: string;
+  modifiedTime?: string;
+  authors?: string[];
 };
 
 export function absoluteUrl(path: `/${string}` = "/") {
@@ -55,6 +61,41 @@ export function createPageMetadata({
       url: path,
       siteName: SITE_NAME,
       type: "website",
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image.url],
+    },
+  };
+}
+
+export function createArticleMetadata({
+  title,
+  description,
+  path,
+  image = DEFAULT_OG_IMAGE,
+  publishedTime,
+  modifiedTime = publishedTime,
+  authors = [SITE_NAME],
+}: ArticleMetadata): Metadata {
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title,
+      description,
+      url: path,
+      siteName: SITE_NAME,
+      type: "article",
+      publishedTime,
+      modifiedTime,
+      authors,
       images: [image],
     },
     twitter: {
@@ -111,5 +152,42 @@ export function createBreadcrumbJsonLd(
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+export function createArticleJsonLd({
+  headline,
+  description,
+  path,
+  publishedTime,
+  modifiedTime = publishedTime,
+  image = DEFAULT_OG_IMAGE.url,
+}: {
+  headline: string;
+  description: string;
+  path: `/${string}`;
+  publishedTime: string;
+  modifiedTime?: string;
+  image?: `/${string}`;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline,
+    description,
+    datePublished: publishedTime,
+    dateModified: modifiedTime,
+    image: absoluteUrl(image),
+    mainEntityOfPage: absoluteUrl(path),
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
   };
 }

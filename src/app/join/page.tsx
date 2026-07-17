@@ -80,7 +80,7 @@ export default function JoinPage() {
               Apply
             </p>
             <a
-              href="https://www.g8road.com/camps/mudskippers"
+              href="https://www.g8road.com/apply?camp=mudskippers"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 group inline-flex items-center gap-2 text-terracotta text-lg"

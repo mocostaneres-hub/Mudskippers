@@ -10,12 +10,18 @@ import {
 } from "@/lib/seo";
 
 const description =
-  "The Pop Gym is Mudskippers Camp's Burning Man gym in Black Rock City: functional training, kettlebells, TRX, battle ropes, mobility, and pop music on the playa.";
+  "The Pop Gym is Mudskippers Camp's fully functional Burning Man gym in Black Rock City, themed after the music, color, and workout culture of the 80s and 90s.";
 
 export const metadata: Metadata = createPageMetadata({
   title: "The Pop Gym | Burning Man Gym in Black Rock City",
   description,
   path: "/pop-gym",
+  image: {
+    url: "/images/pop-gym/pop-gym-functional-training.jpg",
+    width: 1280,
+    height: 960,
+    alt: "The fully equipped Pop Gym at Mudskippers Camp on the Burning Man playa",
+  },
 });
 
 const popGymJsonLd = [
@@ -23,10 +29,12 @@ const popGymJsonLd = [
     name: "The Pop Gym at Mudskippers Camp",
     description,
     path: "/pop-gym",
+    image: "/images/pop-gym/pop-gym-functional-training.jpg",
     keywords: [
       "The Pop Gym",
       "Burning Man gym",
       "Black Rock City gym",
+      "80s and 90s themed gym",
       "playa workout",
       "functional training Burning Man",
       "kettlebells Burning Man",
@@ -70,21 +78,47 @@ export default function PopGymPage() {
           The Pop Gym.
         </h1>
 
-        <p className="mt-10 text-xl sm:text-2xl text-ink-soft max-w-2xl leading-relaxed">
-          A Burning Man gym in the dust, hosted by Mudskippers Camp in Black
-          Rock City. Sweat to the icons and work out to the best pop hits from
-          the 80s thru the 2020s.
-        </p>
+        <div className="mt-10 max-w-3xl space-y-5 text-xl leading-relaxed text-ink-soft sm:text-2xl">
+          <p>
+            A fully functional open-air gym themed after the bold colors,
+            music, and workout culture of the 80s and 90s.
+          </p>
+          <p>
+            Train with squat racks, benches, free weights, kettlebells,
+            mobility space, and a hydration station in the dust. Sweat to the
+            icons and work out to pop hits from the 80s through today.
+          </p>
+        </div>
 
-        <div className="mt-16 relative w-full aspect-[3/2] overflow-hidden">
-          <Image
-            src="/images/pop-gym.png"
-            alt="The Pop Gym at sunrise on the playa, with kettlebells, mats, and a disco ball"
-            fill
-            sizes="(min-width: 1280px) 1200px, 100vw"
-            className="object-cover"
-            priority
-          />
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <figure className="relative aspect-[3/2] overflow-hidden bg-cream-soft sm:col-span-2">
+            <Image
+              src="/images/pop-gym/pop-gym-functional-training.jpg"
+              alt="The fully equipped Pop Gym on the playa with squat racks, free weights, kettlebells, a hydration station, disco balls, and people training"
+              fill
+              sizes="(min-width: 1280px) 1200px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </figure>
+          <figure className="relative aspect-[4/3] overflow-hidden bg-cream-soft">
+            <Image
+              src="/images/pop-gym/pop-gym-signage.jpg"
+              alt="Pop Gym by Mudskippers sign surrounded by disco balls and bright 80s and 90s-inspired decor"
+              fill
+              sizes="(min-width: 1280px) 592px, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </figure>
+          <figure className="relative aspect-[4/3] overflow-hidden bg-cream-soft">
+            <Image
+              src="/images/pop-gym/pop-gym-free-weights.jpg"
+              alt="People using benches and free weights inside The Pop Gym's colorful retro workout space"
+              fill
+              sizes="(min-width: 1280px) 592px, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </figure>
         </div>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 border-t border-rule pt-12">

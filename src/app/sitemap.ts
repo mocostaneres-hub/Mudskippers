@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/lib/blog";
 import { absoluteUrl } from "@/lib/seo";
 
 const routes: Array<{
@@ -12,15 +13,24 @@ const routes: Array<{
   { path: "/faq", changeFrequency: "weekly", priority: 0.85 },
   { path: "/join", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/blog", changeFrequency: "monthly", priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return routes.map((route) => ({
-    url: absoluteUrl(route.path),
-    lastModified,
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
-  }));
+  return [
+    ...routes.map((route) => ({
+      url: absoluteUrl(route.path),
+      lastModified,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    })),
+    ...BLOG_POSTS.map((post) => ({
+      url: absoluteUrl(post.path),
+      lastModified: new Date(post.publishedTime),
+      changeFrequency: "yearly" as const,
+      priority: 0.75,
+    })),
+  ];
 }

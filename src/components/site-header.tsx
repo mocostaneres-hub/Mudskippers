@@ -5,11 +5,12 @@ const nav = [
   { href: "/schedule", label: "2026 Schedule" },
   { href: "/pop-gym", label: "Pop Gym" },
   { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/join", label: "Join" },
 ];
 
-const APPLY_URL = "https://www.g8road.com/camps/mudskippers";
+const APPLY_URL = "https://www.g8road.com/apply?camp=mudskippers";
 
 export function SiteHeader() {
   return (

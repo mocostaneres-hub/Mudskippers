@@ -39,7 +39,7 @@ const sections: FaqSection[] = [
           <p>
             You can{" "}
             <a
-              href="https://www.g8road.com/camps/mudskippers"
+              href="https://www.g8road.com/apply?camp=mudskippers"
               target="_blank"
               rel="noopener noreferrer"
               className="text-terracotta border-b border-terracotta/40 hover:border-terracotta"
