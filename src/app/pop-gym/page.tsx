@@ -47,25 +47,6 @@ const popGymJsonLd = [
   ]),
 ];
 
-const classes = [
-  {
-    name: "Cher Cardio",
-    note: "Believe-era choreo. Low impact, high glamour.",
-  },
-  {
-    name: "Britney Bootcamp",
-    note: "Slave 4 U conditioning. Bring water. Bring a hat.",
-  },
-  {
-    name: "Mariah Mobility",
-    note: "Whistle-tone breathwork and shoulder mobility.",
-  },
-  {
-    name: "Lady Gaga Lift",
-    note: "Strength circuit set to The Fame Monster, end-to-end.",
-  },
-];
-
 export default function PopGymPage() {
   return (
     <section className="px-6 sm:px-10 lg:px-16">
@@ -119,22 +100,6 @@ export default function PopGymPage() {
               className="object-cover"
             />
           </figure>
-        </div>
-
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 border-t border-rule pt-12">
-          {classes.map((c, i) => (
-            <div key={c.name} className="flex gap-6">
-              <span className="font-display text-terracotta text-lg pt-1 w-8 shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="font-display font-light text-ink text-3xl">
-                  {c.name}
-                </h3>
-                <p className="mt-2 text-ink-soft">{c.note}</p>
-              </div>
-            </div>
-          ))}
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-rule pt-12 max-w-4xl">
