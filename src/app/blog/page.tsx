@@ -49,7 +49,7 @@ export default function BlogPage() {
         <h1 className="mt-4 max-w-5xl font-display text-[clamp(3rem,8vw,7rem)] font-light leading-[0.95] tracking-tight text-ink">
           Notes from
           <br />
-          The Pop Gym.
+          the Mudskippers.
         </h1>
         <p className="mt-10 max-w-2xl text-xl leading-relaxed text-ink-soft sm:text-2xl">
           Practical guides to moving, recovering, and finding your people in

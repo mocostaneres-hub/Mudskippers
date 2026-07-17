@@ -13,7 +13,7 @@ const description =
   "Mudskippers Camp is a Burning Man 2026 camp at 6:45 & C in Black Rock City, home of The Pop Gym, playa workouts, pop music, and community events.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Burning Man Camp and Pop-Up Gym",
+  title: "Mudskippers Camp and the Pop Gym",
   description,
   path: "/",
 });
