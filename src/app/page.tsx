@@ -43,9 +43,9 @@ export default function Home() {
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl w-full py-12 sm:py-16">
           <h1 className="font-display font-light text-ink leading-[0.95] tracking-tight text-[clamp(2.75rem,9vw,8rem)]">
-            The playa&apos;s
+            Mudskippers Camp
             <br />
-            pop-up gym.
+            and the Pop Gym
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-ink-soft max-w-xl">
