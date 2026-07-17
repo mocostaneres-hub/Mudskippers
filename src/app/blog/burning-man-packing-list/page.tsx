@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
@@ -135,10 +134,6 @@ export default function BurningManPackingListPage() {
             <time dateTime={post.publishedTime}>{post.displayDate}</time><span aria-hidden>·</span><span>{post.readingTime}</span>
           </div>
         </header>
-
-        <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden bg-cream-soft sm:mt-16">
-          <Image src={post.image} alt={post.imageAlt} fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" />
-        </div>
 
         <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 sm:mt-20">
           <aside className="md:col-span-3">
